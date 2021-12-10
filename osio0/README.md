@@ -1,0 +1,1 @@
+Tässä osiossa näyttää olevan muutama tehtävä, pitää laatia kaavioita selain-palvelin kommunikaatiosta eri tilanteissa
