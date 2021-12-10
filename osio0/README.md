@@ -1,1 +1,1 @@
-Tässä osiossa näyttää olevan muutama tehtävä, pitää laatia kaavioita selain-palvelin kommunikaatiosta eri tilanteissa
+Tässä osiossa näyttää olevan muutama GitHub-tehtävä, pitää laatia kaavioita selain-palvelin kommunikaatiosta eri tilanteissa. Ensimmäiset tehtävät oliva Html:n, Css:n ja Htlm:n form-muodon käsittelyä.
