@@ -1,0 +1,9 @@
+0.6: Uusi muistiinpano
+
+Selain: Selaimen palvelinpyyntö kohdistuu osoitteeseen "new_note-spa" pyynnon mukana rungossa menee uusi muistiinpano json-muodossa 
+Palvelin: ei tee uudelleenohjausta vaan vastaa statuskoodilla 201 eli luo uuden resurssin (päivittää lähetetyllä muistiinpanolla), sivua ei siis ladata uudelleen (e.preventDefault()), 
+uusi muistiinpano tulee näkyviin, kun selain renderöi listan uudelleen
+
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+palvelin->selain: application.json
+

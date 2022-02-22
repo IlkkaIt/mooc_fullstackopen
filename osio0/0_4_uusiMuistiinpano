@@ -1,0 +1,18 @@
+0.4: uusi muistiinpano
+
+1. Selain: lähettää "POST"-menetelmällä palvelinpyynnön osoitteeseen "new_note", pyynnön mukana lomakkeessa uusi muistiinpano
+2. Palvelin: tekee uudelleenohjauspyynnön, merkkinä statuskoodi 302, osoitteeseen "notes", päivittää json-dataa lomakkeen tiedolla
+3. Selain: lataa uudelleen (GET) "notes"-sivun ja tekee useita uusia GET-pyyntöjä ladaten tyylitiedoston, javaScript-tiedoston, päivitetyn json-datan ja favicon.ico itiedoston
+
+
+selain->palvelin: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+palvelin-->selain: HTML-koodi
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+palvelin-->selain: main.css
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+palvelin-->selain: main.js
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+palvelin-->selain: data.json
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/favicon.ico
+palvelin-->selain: favicon.ico
