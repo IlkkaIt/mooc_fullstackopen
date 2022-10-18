@@ -1,1 +1,1 @@
-repositories for Full Stack Open 2021 --->2022 assignments
+repositories for Full Stack Open 2022 --->2023 assignments
