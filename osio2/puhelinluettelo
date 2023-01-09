@@ -1,0 +1,98 @@
+index.js
+
+
+import ReactDOM from "react-dom"
+import App from "./App"
+
+ReactDOM.render(<App />, document.getElementById("root"))
+
+
+
+App.js
+
+import { useState } from "react";
+
+function PersonForm({addPersonToNumbers}) {
+  const [newName, setNewName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`${newName} is already added to phonebook`)
+    addPersonToNumbers({ newName, phoneNumber });
+    setNewName("")
+    setPhoneNumber("")   
+  };
+
+  return (
+    <form
+      onSubmit={handleSubmit} 
+    >
+      name: <input
+        type="text"
+        name="firstName"
+        placeholder="first name"
+        value={newName}
+        onChange={(e) => {
+        setNewName(e.target.value)}}
+      
+      />
+      <br></br>
+      phonenumber: <input
+        type="text"
+        name="phoneNumber"
+        placeholder="phonenumber"
+        value={phoneNumber}
+        onChange={(e) => setPhoneNumber(e.target.value)}
+      />
+      <br></br>
+      <button type="submit" onSubmit={handleSubmit}>
+        add
+      </button>
+    </form>
+  );
+}
+
+function Header(){
+   return(
+    <div>
+      <h2>
+        PHONEBOOK APP
+      </h2>
+    </div>
+  );}
+
+function Persons({ persons }) {
+  return (
+    <div>
+      <h4>
+          {persons.map((person, i) => 
+          <div key={i}>
+           {person.newName}<br></br>{person.phoneNumber}
+          </div>
+        )}
+      </h4>
+    </div>
+  );
+}
+
+function App() {
+  const [persons, setPersons] = useState([]);
+  const addPersonToNumbers = (person) => {
+      
+    setPersons(
+      [...persons, person]
+    )
+  };
+
+  return (
+    <div> 
+      <Header/>
+      <h3>Add a new</h3>
+      <PersonForm addPersonToNumbers={addPersonToNumbers} />
+      <h3>Numbers</h3>
+      <Persons persons={persons} /> 
+    </div>
+  );
+}
+
+export default App;
